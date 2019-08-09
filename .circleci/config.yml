@@ -43,7 +43,7 @@ jobs:
       #    command: pod install --verbose
       - run:
           name: Install Fastlane
-          command: fastlane init
+          command: sudo gem install fastlane -NV
      #
       - run:
           name: Build and run tests
