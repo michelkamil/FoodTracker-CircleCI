@@ -42,8 +42,8 @@ jobs:
       #    name: Install CocoaPods
       #    command: pod install --verbose
       - run:
-        name: Install Fastlane
-        command: fastlane init
+          name: Install Fastlane
+          command: fastlane init
      #
       - run:
           name: Build and run tests
