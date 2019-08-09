@@ -26,8 +26,10 @@
 version: 2
 jobs:
   build-and-test:
-    macos:
-      xcode: "10.2.0"
+    #macos:
+    #  xcode: "10.2.0"
+    docker:
+      - image: circleci/ruby:2.4.1
     environment:
       FL_OUTPUT_DIR: output
     steps:
