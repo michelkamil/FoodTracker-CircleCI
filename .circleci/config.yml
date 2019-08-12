@@ -2,31 +2,34 @@
 
 version: 2
 jobs:
-  one:
+  install-fastlane:
     docker:
       - image: circleci/ruby:2.4.1
+    environment:
+      FL_OUTPUT_DIR: output
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: echo "Install Fastlane"
       - run: sleep 25
+      - run:
+          name: Fetch CocoaPods Specs
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - run:
+          name: Install Fastlane
+          command: sudo gem install fastlane -NV
   test:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: fastlane gym
-#  deploy:
-#    docker:
-#      - image: circleci/ruby:2.4.1
-#    steps:
-#      - checkout
-#      - deploy:
-          #name: Deploy
-#          command: fastlane gym
 
 workflows:
   version: 2
   test_release:
     jobs:
-      - one
-      - test
+      - install-fastlane
+      - test:
+          requires:
+            install-fastlane
