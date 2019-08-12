@@ -25,7 +25,7 @@ jobs:
       - run:
           name: Install Fastlane
           command: sudo gem install fastlane -NV
-      - run: fastlane scan
+      - run: fastlane gym
 
 workflows:
   version: 2
