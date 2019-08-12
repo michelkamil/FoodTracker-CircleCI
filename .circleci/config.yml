@@ -11,10 +11,9 @@ jobs:
       - run: echo "First without dependence"
       - run: sleep 25
   install-fastlane:
-    docker:
-      - image: circleci/ruby:2.4.1
-    environment:
-      FL_OUTPUT_DIR: output
+    macos:
+      xcode: "10.2.0"
+    shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
       - run: echo "Install Fastlane"
@@ -32,6 +31,6 @@ workflows:
   version: 2
   test_release:
     jobs:
-      - one
+    #  - one
       - install-fastlane
       
