@@ -30,6 +30,4 @@ workflows:
   test_release:
     jobs:
       - install-fastlane
-      - test:
-          requires:
-            install-fastlane
+      - test
