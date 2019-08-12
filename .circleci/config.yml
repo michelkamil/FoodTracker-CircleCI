@@ -29,9 +29,4 @@ workflows:
   test_release:
     jobs:
       - one
-      - test:
-        requires:
-          one
- #     - deploy:
- #         requires:
- #           test
+      - test
