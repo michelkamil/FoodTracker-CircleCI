@@ -14,7 +14,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: fastlane scan
+      - run: fastlane gym
 #  deploy:
 #    docker:
 #      - image: circleci/ruby:2.4.1
@@ -30,6 +30,8 @@ workflows:
     jobs:
       - one
       - test
+        requires:
+          one
  #     - deploy:
  #         requires:
  #           test
