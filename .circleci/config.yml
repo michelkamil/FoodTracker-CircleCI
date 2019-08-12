@@ -33,5 +33,5 @@ workflows:
   test_release:
     jobs:
       - one
-#      - install-fastlane
+      - install-fastlane
       
