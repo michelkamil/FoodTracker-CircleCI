@@ -29,7 +29,7 @@ workflows:
   test_release:
     jobs:
       - one
-      - test
+      - test:
         requires:
           one
  #     - deploy:
