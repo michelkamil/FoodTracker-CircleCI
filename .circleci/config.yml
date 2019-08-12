@@ -3,8 +3,9 @@
 version: 2
 jobs:
   one:
-    docker:
-      - image: circleci/ruby:2.4.1
+    macos:
+      xcode: "10.2.0"
+    shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
       - run: echo "First without dependence"
@@ -32,5 +33,5 @@ workflows:
   test_release:
     jobs:
       - one
-      - install-fastlane
+#      - install-fastlane
       
