@@ -2,17 +2,24 @@
 
 version: 2
 jobs:
+  one:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "A first hello"
+      - run: sleep 25
   test:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
-      #- checkout
+      - checkout
       - run: fastlane scan
   deploy:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
-      #- checkout
+      - checkout
       - deploy:
           #name: Deploy
           command: fastlane gym
@@ -21,10 +28,8 @@ workflows:
   version: 2
   test_release:
     jobs:
+      - one
       - test
       - deploy:
           requires:
             test
-          filters:
-            branches:
-              only: release
