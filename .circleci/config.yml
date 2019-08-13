@@ -18,10 +18,10 @@ jobs:
       - checkout
       - run: echo "Install Fastlane"
       - run: sleep 25
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      #- run:
+      #    name: Fetch CocoaPods Specs
+      #    command: |
+      #      curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run:
           name: Install Fastlane
           command: sudo gem install fastlane -NV
