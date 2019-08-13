@@ -25,8 +25,8 @@ jobs:
           name: Install Fastlane
           command: sudo gem install fastlane -NV
       #- run : xcodebuild -showBuildSettings -allowProvisioningUpdates -scheme PlayingCard -project ./PlayingCard.xcodeproj
-      - run : fastlane run build_ios_app -allowProvisioningUpdates
-      #- run: fastlane gym
+      #- run : fastlane run build_ios_app -allowProvisioningUpdates
+      - run: fastlane gym (export_xcargs: "-allowProvisioningUpdates")
       
 
 workflows:
