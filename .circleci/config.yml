@@ -26,8 +26,8 @@ jobs:
           command: sudo gem install fastlane -NV
       #- run : xcodebuild -showBuildSettings -allowProvisioningUpdates -scheme PlayingCard -project ./PlayingCard.xcodeproj
       #- run: sudo fastlane init
-      - run: sudo fastlane xcclean
-      - run: fastlane xcodebuild --verbose
+      #- run: sudo fastlane xcclean
+      - run: sudo fastlane xcodebuild --verbose
       
 
 workflows:
