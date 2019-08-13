@@ -17,7 +17,6 @@ jobs:
     steps:
       - checkout
       - run: echo "Install Fastlane"
-      - run: sleep 25
       #- run:
       #    name: Fetch CocoaPods Specs
       #    command: |
@@ -25,8 +24,9 @@ jobs:
       - run:
           name: Install Fastlane
           command: sudo gem install fastlane -NV
-      #- run: fastlane gym -allowProvisioningUpdates
-      - run : xcodebuild -showBuildSettings -allowProvisioningUpdates -scheme PlayingCard -project ./PlayingCard.xcodeproj
+      - run : xcodebuild -allowProvisioningUpdates
+      - run: fastlane gym
+      
 
 workflows:
   version: 2
