@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: echo "First without dependence"
       - run: sleep 25
-  install-fastlane:
+  clean-and-build:
     macos:
       xcode: "10.2.0"
     shell: /bin/bash --login -eo pipefail
@@ -28,13 +28,14 @@ jobs:
                         #-showBuildSettings
       #- run: sudo fastlane init
       #- run: sudo fastlane xcclean
-      - run: sudo fastlane gym #xcodebuild
-      
+      #- run: sudo fastlane gym #xcodebuild
+      - run: xcodebuild clean build -allowProvisioningUpdates
+
 
 workflows:
   version: 2
   test_release:
     jobs:
     #  - one
-      - install-fastlane
+      - clean-and-build
       

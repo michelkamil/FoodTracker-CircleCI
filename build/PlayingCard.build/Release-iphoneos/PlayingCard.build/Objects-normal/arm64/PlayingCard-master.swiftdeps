@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "44c0c1707f040f70fd9a321cd4a05250"
+build_time: [1565793917, 480997000]
+inputs:
+  "/Users/michelkamil/Desktop/TutorialSwift/PlayingCard/PlayingCard/PlayingCard/ViewController.swift": [9223372036, 854775807]
+  "/Users/michelkamil/Desktop/TutorialSwift/PlayingCard/PlayingCard/PlayingCard/PlayingCardDeck.swift": [9223372036, 854775807]
+  "/Users/michelkamil/Desktop/TutorialSwift/PlayingCard/PlayingCard/PlayingCard/PlayingCard.swift": [9223372036, 854775807]
+  "/Users/michelkamil/Desktop/TutorialSwift/PlayingCard/PlayingCard/PlayingCard/PlayingCardView.swift": [9223372036, 854775807]
+  "/Users/michelkamil/Desktop/TutorialSwift/PlayingCard/PlayingCard/PlayingCard/Supporting Files/AppDelegate.swift": [9223372036, 854775807]
