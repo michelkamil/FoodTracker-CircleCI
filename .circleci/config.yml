@@ -28,7 +28,7 @@ jobs:
       #- run: sudo fastlane init
       #- run: sudo fastlane xcclean
       #- run: sudo fastlane gym #xcodebuild
-      - run: xcodebuild clean build -allowProvisioningUpdates
+      - run: xcodebuild clean -allowProvisioningUpdates -scheme PlayingCard -project ./PlayingCard.xcodeproj
 
 
 workflows:
