@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: echo "First without dependence"
+      - run: fastlane custom_lane
   clean-and-build:
     macos:
       xcode: "10.2.0"
