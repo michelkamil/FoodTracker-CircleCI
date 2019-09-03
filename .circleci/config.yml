@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: echo "First without dependence"
+      - run: sudo gem install fastlane -NV
       - run: fastlane custom_lane
   clean-and-build:
     macos:
