@@ -3,13 +3,12 @@
 version: 2
 jobs:
   one:
-    macos:
-      xcode: "10.2.0"
+    docker:
+      - image: circleci/ruby:2.4.1
     shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
       - run: echo "First without dependence"
-      - run: sleep 25
   clean-and-build:
     macos:
       xcode: "10.2.0"
@@ -36,6 +35,6 @@ workflows:
   version: 2
   test_release:
     jobs:
-    #  - one
-      - clean-and-build
+      - one
+    #  - clean-and-build
       
